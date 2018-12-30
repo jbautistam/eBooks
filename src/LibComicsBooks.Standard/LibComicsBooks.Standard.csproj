@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Bau.Libraries.LibComicsBooks</RootNamespace>
+    <AssemblyName>LibComicsBooks</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Compression\LibCompressor\LibCompressor.csproj" />
+  </ItemGroup>
+
+</Project>

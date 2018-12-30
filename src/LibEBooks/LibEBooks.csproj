@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37663C2E-16CA-4497-B59A-B45847EA6CFA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bau.Libraries.LibEBook</RootNamespace>
+    <AssemblyName>LibEBooks</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\eBookBase.cs" />
+    <Compile Include="Base\eBookBaseCollection.cs" />
+    <Compile Include="BookFactory.cs" />
+    <Compile Include="Formats\eBook\Book.cs" />
+    <Compile Include="Formats\eBook\IndexItem.cs" />
+    <Compile Include="Formats\eBook\IndexItemsCollection.cs" />
+    <Compile Include="Formats\eBook\PageFile.cs" />
+    <Compile Include="Formats\eBook\PageFilesCollection.cs" />
+    <Compile Include="Formats\ePub\Container\ContainerConstants.cs" />
+    <Compile Include="Formats\ePub\Container\ContainerFile.cs" />
+    <Compile Include="Formats\ePub\Container\RootFile.cs" />
+    <Compile Include="Formats\ePub\Container\RootFilesCollection.cs" />
+    <Compile Include="Formats\ePub\Creator\eBookConvertEPub.cs" />
+    <Compile Include="Formats\ePub\Creator\ePubConvertEBook.cs" />
+    <Compile Include="Formats\ePub\Creator\ePubCreator.cs" />
+    <Compile Include="Formats\ePub\ePubEBook.cs" />
+    <Compile Include="Formats\ePub\NCX\NavPoint.cs" />
+    <Compile Include="Formats\ePub\NCX\NavPointsCollection.cs" />
+    <Compile Include="Formats\ePub\NCX\NCXConstants.cs" />
+    <Compile Include="Formats\ePub\NCX\NCXFile.cs" />
+    <Compile Include="Formats\ePub\NCX\NCXFilesCollection.cs" />
+    <Compile Include="Formats\ePub\OPF\Item.cs" />
+    <Compile Include="Formats\ePub\OPF\ItemRef.cs" />
+    <Compile Include="Formats\ePub\OPF\ItemsCollection.cs" />
+    <Compile Include="Formats\ePub\OPF\ItemsRefCollection.cs" />
+    <Compile Include="Formats\ePub\OPF\Metadata.cs" />
+    <Compile Include="Formats\ePub\OPF\OPFConstants.cs" />
+    <Compile Include="Formats\ePub\OPF\OPFPackage.cs" />
+    <Compile Include="Formats\ePub\OPF\OPFPackageConstants.cs" />
+    <Compile Include="Formats\ePub\OPF\OPFPackagesCollection.cs" />
+    <Compile Include="Formats\ePub\Parser\ePubParser.cs" />
+    <Compile Include="Formats\ePub\Parser\ePubParserContainer.cs" />
+    <Compile Include="Formats\ePub\Parser\ePubParserNCX.cs" />
+    <Compile Include="Formats\ePub\Parser\ePubParserPackage.cs" />
+    <Compile Include="Formats\Extensions\DC\DublinCoreConstants.cs" />
+    <Compile Include="Formats\Extensions\Media\MediaTypeConstants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\LibHelper.Standard\LibHelper.Standard.csproj">
+      <Project>{b782d9a6-59e5-4ee8-a385-915e09f9bf62}</Project>
+      <Name>LibHelper.Standard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\LibMarkup.Standard\LibMarkup.Standard.csproj">
+      <Project>{fbf16bb0-c177-41ba-8392-cdc72d12be4d}</Project>
+      <Name>LibMarkup.Standard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Compression\LibCompressor\LibCompressor.csproj">
+      <Project>{5860a639-863a-498c-8b38-9963e4c2920f}</Project>
+      <Name>LibCompressor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
